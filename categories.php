@@ -1,82 +1,101 @@
 <?php
-require('top.inc.php');
-
-if(isset($_GET['type']) && $_GET['type']!=''){
-	$type=get_safe_value($con,$_GET['type']);
-	if($type=='status'){
-		$operation=get_safe_value($con,$_GET['operation']);
-		$id=get_safe_value($con,$_GET['id']);
-		if($operation=='active'){
-			$status='1';
-		}else{
-			$status='0';
-		}
-		$update_status_sql="update categories set status='$status' where id='$id'";
-		mysqli_query($con,$update_status_sql);
+require('top.php');
+if(isset($_GET['id']) && $_GET['id']!=''){
+	$cat_id=mysqli_real_escape_string($con,$_GET['id']);
+	if($cat_id>0){
+		$get_product=get_product($con,'',$cat_id);
+	}else{
+		?>
+		<script>
+		window.location.href='index.php';
+		</script>
+		<?php
 	}
-	
-	if($type=='delete'){
-		$id=get_safe_value($con,$_GET['id']);
-		$delete_sql="delete from categories where id='$id'";
-		mysqli_query($con,$delete_sql);
-	}
+}else{
+	?>
+	<script>
+	window.location.href='index.php';
+	</script>
+	<?php
 }
-
-$sql="select * from categories order by categories asc";
-$res=mysqli_query($con,$sql);
 ?>
-<div class="content pb-0">
-	<div class="orders">
-	   <div class="row">
-		  <div class="col-xl-12">
-			 <div class="card">
-				<div class="card-body">
-				   <h4 class="box-title">Class </h4>
-				   <h4 class="box-link"><a href="manage_categories.php">Add Class</a> </h4>
-				</div>
-				<div class="card-body--">
-				   <div class="table-stats order-table ov-h">
-					  <table class="table ">
-						 <thead>
-							<tr>
-							   <th class="serial">#</th>
-							   <th>ID</th>
-							   <th>Class</th>
-							   <th></th>
-							</tr>
-						 </thead>
-						 <tbody>
-							<?php 
-							$i=1;
-							while($row=mysqli_fetch_assoc($res)){?>
-							<tr>
-							   <td class="serial"><?php echo $i?></td>
-							   <td><?php echo $row['id']?></td>
-							   <td><?php echo $row['categories']?></td>
-							   <td>
-								<?php
-								if($row['status']==1){
-									echo "<span class='badge badge-complete'><a href='?type=status&operation=deactive&id=".$row['id']."'>Available</a></span>&nbsp;";
-								}else{
-									echo "<span class='badge badge-pending'><a href='?type=status&operation=active&id=".$row['id']."'>Booked</a></span>&nbsp;";
-								}
-								echo "<span class='badge badge-edit'><a href='manage_categories.php?id=".$row['id']."'>Edit</a></span>&nbsp;";
-								
+<div class="body__overlay"></div>
+        
+        <!-- Start Bradcaump area -->
+        <div class="ht__bradcaump__area" style="background: rgba(0, 0, 0, 0) url(images/4.jpg) no-repeat scroll center center / cover ;">
+            <div class="ht__bradcaump__wrap">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="bradcaump__inner">
+                                <nav class="bradcaump-inner">
+                                  <a class="breadcrumb-item" href="index.php">Home</a>
+                                  <span class="brd-separetor"><i class="zmdi zmdi-chevron-right"></i></span>
+                                  <span class="breadcrumb-item active">Products</span>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Bradcaump area -->
+        <!-- Start Product Grid -->
+        <section class="htc__product__grid bg__white ptb--100">
+            <div class="container">
+                <div class="row">
+					<?php if(count($get_product)>0){?>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="htc__product__rightidebar">
+                            <div class="htc__grid__top">
+                                <div class="htc__select__option">
+                                    <select class="ht__select">
+                                        <option>Default sorting</option>
 
-								
-								?>
-							   </td>
-							</tr>
-							<?php } ?>
-						 </tbody>
-					  </table>
-				   </div>
+                                        <option>Sort by price</option>
+                                    </select>
+                                </div>
+                               
+                            </div>
+                            <!-- Start Product View -->
+                            <div class="row">
+                                <div class="shop__grid__view__wrap">
+                                    <div role="tabpanel" id="grid-view" class="single-grid-view tab-pane fade in active clearfix">
+                                        <?php
+										foreach($get_product as $list){
+										?>
+										<!-- Start Single Category -->
+										<div class="col-md-4 col-lg-3 col-sm-4 col-xs-12">
+											<div class="category">
+												<div class="ht__cat__thumb">
+													<a href="product.php?id=<?php echo $list['id']?>">
+														<img src="<?php echo PRODUCT_IMAGE_SITE_PATH.$list['image']?>" alt="product images">
+													</a>
+												</div>
+												
+												<div class="fr__product__inner">
+													<h4><a href="#"><?php echo $list['name']?></a></h4>
+													<ul class="fr__pro__prize">
+
+														<li><?php echo $list['price']?></li>
+													</ul>
+												</div>
+											</div>
+										</div>
+										<?php } ?>
+
+                                    </div>
+							   </div>
+                            </div>
+                        </div>
+                    </div>
+					<?php } else { 
+						echo "Data not found";
+					} ?>
+                
 				</div>
-			 </div>
-		  </div>
-	   </div>
-	</div>
-</div>
-<?php
-require('footer.inc.php');
-?>
+            </div>
+        </section>
+        <!-- End Product Grid -->
+        <!-- End Banner Area -->
+<?php require('footer.php')?>        

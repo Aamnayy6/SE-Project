@@ -124,7 +124,9 @@
 /*---------------------------
   Start Section Title
 ----------------------------*/
-
+.btn:hover{
+    background: #563434;
+}
 
 .section__title--2 h2 {
     color: #313131;
@@ -566,7 +568,7 @@
     width: 100%;
 }
 .quote {
-    background: #ff523b none repeat scroll 0 0;
+    background: #c43b68 none repeat scroll 0 0;
     border-radius: 100%;
     height: 30px;
     line-height: 26px;
@@ -659,7 +661,7 @@
     margin-top: 18px;
 }
 .blog__btn a {
-    color: #ff523b;
+    color: #c43b68;
     display: inline-block;
     font-family: "Poppins",sans-serif;
     font-size: 15px;
@@ -743,7 +745,7 @@
     font-size: 44px;
 }
 .service__details h2 {
-    background: #ff523b none repeat scroll 0 0;
+    background: #c43b68 none repeat scroll 0 0;
     color: #212121;
     display: inline-block;
     font-size: 20px;
@@ -900,7 +902,7 @@
     top: 70px;
 }
 .big__promo__details h4 span {
-    color: #ff523b;
+    color: #c43b68;
     display: block;
     font-family: 'Old Standard TT', serif;
     font-size: 72px;
@@ -934,7 +936,7 @@
     padding: 115px 0;
 }
 .ht__promo__inner h6 {
-    color: #ff523b;
+    color: #c43b68;
     font-size: 26px;
     font-weight: 500;
     margin-bottom: 20px;
@@ -994,7 +996,7 @@
     padding: 120px 0;
 }
 .ht__about__inner h2 {
-    color: #ff523b;
+    color: #c43b68;
     font-size: 39px;
     font-weight: 700;
     letter-spacing: 2px;
@@ -1027,8 +1029,8 @@
     margin-top: 23px;
 }
 .ht__about__btn a {
-    background: #ff523b none repeat scroll 0 0;
-    border: 1px solid #ff523b;
+    background: #c43b68 none repeat scroll 0 0;
+    border: 1px solid #c43b68;
     color: #ffffff;
     display: inline-block;
     font-family: 'Poppins', sans-serif;
@@ -1040,8 +1042,8 @@
 }
 .ht__about__btn a:hover {
     background: transparent none repeat scroll 0 0;
-    border: 1px solid #ff523b;
-    color: #ff523b;
+    border: 1px solid #c43b68;
+    color: #c43b68;
 }
 
 .ht__about__inner h2 span {
@@ -1077,7 +1079,7 @@
     position: relative;
 }
 .ht__bann__details p span.theme-color {
-    color: #ff523b;
+    color: #c43b68;
     font-family: "Poppins",sans-serif;
     font-weight: 700;
     margin-top: 16px;
@@ -1194,7 +1196,7 @@
     margin-right: 4px;
 }
 .product__action--dft li a:hover {
-    background: #ff523b none repeat scroll 0 0;
+    background: #c43b68 none repeat scroll 0 0;
     color: #fff;
 }
 
@@ -1210,7 +1212,7 @@
     background: #f6f6f6;
 }
 .htc__best__sell__wrap .product__action li a:hover {
-    background: #ff523b;
+    background: #c43b68;
     color: #fff;
 }
 .htc__best__sell__wrap .best__product__action {
@@ -1263,11 +1265,11 @@
     margin-top: 72px;
 }
 .ht__intrac__btn a:hover {
-    background: #ff523b none repeat scroll 0 0;
+    background: #c43b68 none repeat scroll 0 0;
     color: #fff;
 }
 .ht__intrac__details::before {
-    background: #ff523b none repeat scroll 0 0;
+    background: #c43b68 none repeat scroll 0 0;
     content: "";
     height: 386px;
     left: 50%;
@@ -1323,7 +1325,7 @@
     text-align: center;
 }
 .htc__fashion__icon__inner h2 {
-    color: #ff523b;
+    color: #c43b68;
     display: inline-block;
     font-size: 48px;
     margin-bottom: 50px;
@@ -1332,7 +1334,7 @@
     text-transform: uppercase;
 }
 .htc__fashion__icon__inner h2::before {
-    background: #ff523b none repeat scroll 0 0;
+    background: #c43b68 none repeat scroll 0 0;
     bottom: 0;
     content: "";
     height: 3px;
@@ -1368,7 +1370,7 @@
     height: 270px;
 }
 .breadcrumb-item {
-    color: #494949;
+    color: #f5f5f5;
     font-family: "Poppins",sans-serif;
     font-size: 18px;
     font-weight: 500;
@@ -2147,10 +2149,10 @@ select.select__size {
     width: 130px;
 }
 .table-content table td.product-name a:hover,.buttons-cart a:hover{
-    color: #c43b68
+    color: #ff523b;
 }
 .buttons-cart a {
-    background: #ebebeb none repeat scroll 0 0;
+    background: #ff523b none repeat scroll 0 0;
     color: #3f3f3f;
     font-family: 'Poppins', sans-serif;
     font-size: 12px;
@@ -2663,8 +2665,8 @@ a.shipping-calculator-button:hover{
 }
 .ht__comment__btn a:hover {
     background: transparent none repeat scroll 0 0;
-    border: 1px solid #c43b68;
-    color: #c43b68;
+    border: 1px solid #ff523b;
+    color: #ff523b;
 }
 .comment__thumb {
     margin-right: 30px;
@@ -2709,7 +2711,7 @@ a.shipping-calculator-button:hover{
     transition: all 0.3s ease 0s;
 }
 .reply__btn a:hover {
-    background: #c43b68 none repeat scroll 0 0;
+    background: #ff523b none repeat scroll 0 0;
     color: #fff;
 }
 .comment.comment--reply {
@@ -2725,7 +2727,7 @@ a.shipping-calculator-button:hover{
     font-size: 17.5px;
     margin: 0 0 20px;
     padding: 10px 20px;
-    background: #c43b68;
+    background: #ff523b;
     color: #fff;
     margin-top: 20px;
     padding: 27px 34px;
@@ -2760,7 +2762,7 @@ a.shipping-calculator-button:hover{
     font-size: 36px;
 }
 .address__icon {
-    background: #ff523b none repeat scroll 0 0;
+    background: #1b6d85 none repeat scroll 0 0;
     height: 120px;
     line-height: 144px;
     text-align: center;
@@ -2791,7 +2793,7 @@ a.shipping-calculator-button:hover{
     font-size: 14px;
 }
 .address--2 p a i {
-    color: #c43b68;
+    color: #1b6d85;
     font-size: 18px;
     padding-right: 9px;
 }
@@ -2833,7 +2835,7 @@ a.shipping-calculator-button:hover{
     margin-top: 32px;
 }
 .fv-btn {
-    background: #ff523b none repeat scroll 0 0;
+    background: #1b6d85 none repeat scroll 0 0;
     border: 1px solid #ff523b;
     color: #fff;
     font-family: 'Poppins', sans-serif;
@@ -2847,7 +2849,7 @@ a.shipping-calculator-button:hover{
 .fv-btn:hover {
     background: transparent none repeat scroll 0 0;
     border: 1px solid #ff523b;
-    color: #ff523b;
+    color: #1b6d85;
 }
 .fv-btn i {
     padding-right: 9px;
